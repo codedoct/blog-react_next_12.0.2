@@ -2,6 +2,9 @@
   "name": "logee-customer",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.16.1"
+  },
   "scripts": {
     "dev": "next dev -p 3004 -H 0.0.0.0",
     "build": "next build",
@@ -10,7 +13,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "4.6.2",
-    "antd": "4.14.1",
+    "antd": "4.16.13",
     "axios": "0.24.0",
     "dayjs": "1.9.4",
     "js-cookie": "2.2.1",
