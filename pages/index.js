@@ -1,18 +1,18 @@
 import React from 'react'
-import Layout from '~/layouts/admin'
-import DashboardComponent from '~/components/Page/Dashboard'
+import Layout from '~/layouts/empty'
+import HomeComponent from '~/components/Page/Home'
 
-const DashboardPage = () => {
+const HomePage = () => {
   return (
     <>
       <Layout
-        meta_title='Logee | Logistik App'
-        meta_description='Logistik App'
+        meta_title='NextJS | Version 12'
+        meta_description='New version NextJS nov 2021'
       >
-        <DashboardComponent />
+        <HomeComponent />
       </Layout>
     </>
   )
 }
 
-export default DashboardPage
+export default HomePage

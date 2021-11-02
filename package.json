@@ -1,6 +1,6 @@
 {
-  "name": "logee-customer",
-  "version": "0.1.0",
+  "name": "next12",
+  "version": "1.0.0",
   "private": true,
   "engines": {
     "node": "14.16.1"
@@ -12,24 +12,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ant-design/icons": "4.6.2",
+    "@ant-design/icons": "4.7.0",
     "antd": "4.16.13",
     "axios": "0.24.0",
-    "dayjs": "1.9.4",
-    "js-cookie": "2.2.1",
-    "next": "12.0.1",
-    "next-redux-wrapper": "6.0.2",
+    "dayjs": "1.10.7",
+    "js-cookie": "3.0.1",
+    "next": "12.0.2",
+    "next-redux-wrapper": "7.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-redux": "7.2.3",
-    "redux": "4.0.5",
-    "redux-thunk": "2.3.0"
+    "react-redux": "7.2.6",
+    "redux": "4.1.2",
+    "redux-thunk": "2.4.0"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.1",
-    "eslint-plugin-react": "7.21.5",
-    "husky": "7.0.4"
+    "eslint": "^8.1.0",
+    "eslint-config-next": "^12.0.1",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4"
   },
   "husky": {
     "hooks": {
