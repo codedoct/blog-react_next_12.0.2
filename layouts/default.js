@@ -11,7 +11,7 @@ const LayoutComponent = (props) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
-    <Layout.Content style={{paddingTop:'20px'}}>
+    <Layout.Content style={{paddingTop:'70px'}}>
       {props.children}
     </Layout.Content>
   </>
