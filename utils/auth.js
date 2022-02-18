@@ -9,11 +9,11 @@ export const setCookie = (key, cookie) => {
 }
 
 export const getUserToken = () => {
-  return Cookies.get('lg_token')
+  return Cookies.get('rn12_token')
 }
 
 export const isLoginServer = (req) => {
-  const token = req.cookies ? req.cookies.lg_token : null
+  const token = req.cookies ? req.cookies.rn12_token : null
   if (token) {
     return true
   } 
@@ -21,7 +21,7 @@ export const isLoginServer = (req) => {
 }
 
 export const isLogin = () => {
-  const token = Cookies.get('lg_token')
+  const token = Cookies.get('rn12_token')
   if (token) {
     return true
   } 
@@ -29,7 +29,7 @@ export const isLogin = () => {
 }
 
 export const logoutUser = () => {
-  Cookies.remove('lg_token', { path: '/' })
+  Cookies.remove('rn12_token', { path: '/' })
   location.reload()
 }
 
