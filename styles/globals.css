@@ -16,6 +16,13 @@ a {
   box-sizing: border-box;
 }
 
+.font-link {
+  cursor: pointer;
+}
+.font-link:hover {
+  color: rgb(182, 182, 182);
+}
+
 .content-container {
   padding: 20px;
 }
