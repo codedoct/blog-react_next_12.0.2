@@ -1,0 +1,14 @@
+.font-have-login {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.modal-body {
+  padding: 20px 0;
+}
+.link-login-modal {
+  cursor: pointer;
+  color: var(--main-next12-color);
+}
