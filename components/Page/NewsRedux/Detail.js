@@ -1,5 +1,4 @@
 import React from 'react'
-import Router from 'next/router'
 import { connect } from 'react-redux'
 import { getNewsDetail } from "~/store/actions/news"
 import DataLoading from '~/components/Global/Data/Loading'
@@ -31,4 +30,4 @@ const NewsDetail = ({dispatch, newsId, news}) => {
   )
 }
 
-export default NewsDetail
+export default connect(state => state)(NewsDetail)
