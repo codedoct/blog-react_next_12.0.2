@@ -31,8 +31,8 @@ const RegisterModal = ({dispatch, user}) => {
       setIsLoading(false)
       form.resetFields()
       dispatch({ type: 'SET_IS_MODAL_REGISTER_VISIBLE', payload: false })
-    } catch (err) {
-      message.error(`API error: ${err ? err.data ? (err.data.attributes ? err.data.attributes[Object.keys(err.data.attributes)[0]] : err.data.message || err.data) : err : 'something went wrong'}`)
+    } catch (error) {
+      message.error(`API error: ${error.response}`)
       setIsLoading(false)
     }
   }
