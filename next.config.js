@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-  reactStrictMode: true,
+  // reactStrictMode: true,
   webpack: config => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr])
