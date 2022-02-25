@@ -1,7 +1,7 @@
-/* eslint-disable no-undef */
 import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Modal, Input, Form, message } from 'antd'
+import { loginUser } from "~/store/actions/user"
 
 const LoginModal = ({dispatch, user}) => {
   const [isLoading, setIsLoading] = React.useState(false)
@@ -22,11 +22,13 @@ const LoginModal = ({dispatch, user}) => {
         email: values.email,
         password: values.password
       }
-      console.log(requestData)
+
+      await loginUser(requestData)
+      message.success(`Login success`)
+      location.reload()
+    } catch (error) {
       setIsLoading(false)
-    } catch (err) {
-      setIsLoading(false)
-      message.error(`API error: ${error.response}`)
+      message.error(`API error: ${error ? error.response : 'Something went wrong'}`)
     }
   }
 

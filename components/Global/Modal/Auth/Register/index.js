@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Button, Modal, Input, Form, message, Select } from 'antd'
 import styles from './RegisterModal.module.css'
+import { registerUser } from "~/store/actions/user"
 
 const RegisterModal = ({dispatch, user}) => {
   const [form] = Form.useForm()
@@ -27,13 +28,14 @@ const RegisterModal = ({dispatch, user}) => {
         password: values.password
       }
 
-      console.log(dataRequest)
+      await registerUser(dataRequest)
+      message.success(`Register success`)
       setIsLoading(false)
       form.resetFields()
       dispatch({ type: 'SET_IS_MODAL_REGISTER_VISIBLE', payload: false })
     } catch (error) {
-      message.error(`API error: ${error.response}`)
       setIsLoading(false)
+      message.error(`API error: ${error ? error.response : 'Something went wrong'}`)
     }
   }
 
