@@ -1,5 +1,4 @@
 import React from 'react'
-import Router from 'next/router'
 import { API_NEWS } from '~/utils/api-url'
 import { apiGetNonAuth } from '~/utils/api'
 import DataLoading from '~/components/Global/Data/Loading'
@@ -16,7 +15,7 @@ const NewsDetail = ({newsId}) => {
       setNewsDetail(response.data.result)
       setIsLoading(false)
     } catch (err) {
-      console.log(err.response)
+      console.log(err)
       setIsLoading(false)
     }
   }

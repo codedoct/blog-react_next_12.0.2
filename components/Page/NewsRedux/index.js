@@ -15,7 +15,7 @@ const News = ({dispatch, news}) => {
       await getNews(dispatch)
       setIsLoading(false)
     } catch (err) {
-      console.log(err.response)
+      console.log(err)
       setIsLoading(false)
     }
   }

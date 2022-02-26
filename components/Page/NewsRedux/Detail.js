@@ -13,7 +13,7 @@ const NewsDetail = ({dispatch, newsId, news}) => {
       await getNewsDetail(dispatch, newsId)
       setIsLoading(false)
     } catch (err) {
-      console.log(err.response)
+      console.log(err)
       setIsLoading(false)
     }
   }

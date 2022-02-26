@@ -17,7 +17,7 @@ const News = () => {
       setNews(response.data.result)
       setIsLoading(false)
     } catch (err) {
-      console.log(err.response)
+      console.log(err)
       setIsLoading(false)
     }
   }
