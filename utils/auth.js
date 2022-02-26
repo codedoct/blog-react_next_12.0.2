@@ -30,19 +30,19 @@ export const redirectTo = (destination, { res, status } = {}) => {
   }
 }
 
-// export const getUserToken = () => {
-//   return Cookies.get('rn12_token')
-// }
+export const isLogin = () => {
+  const token = Cookies.get('rn12_token')
+  if (token) {
+    return true
+  } 
+  return false
+}
 
-// export const isLogin = () => {
-//   const token = Cookies.get('rn12_token')
-//   if (token) {
-//     return true
-//   } 
-//   return false
-// }
+export const removeCookie = () => {
+  Cookies.remove('rn12_token', { path: '/' })
+  location.reload()
+}
 
-// export const logoutUser = () => {
-//   Cookies.remove('rn12_token', { path: '/' })
-//   location.reload()
-// }
+export const getUserToken = () => {
+  return Cookies.get('rn12_token')
+}

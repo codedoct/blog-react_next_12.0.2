@@ -5,6 +5,9 @@ import { MenuOutlined } from '@ant-design/icons'
 import styles from './Header.module.css'
 import RegisterModal from '~/components/Global/Modal/Auth/Register'
 import LoginModal from '~/components/Global/Modal/Auth/Login'
+import { isLogin, removeCookie } from '~/utils/auth'
+import Router from 'next/router'
+import { logoutUser } from "~/store/actions/user"
 
 const HeaderComponent = ({dispatch}) => {
   const showModalRegister = () => {
@@ -17,15 +20,35 @@ const HeaderComponent = ({dispatch}) => {
     dispatch({ type: 'SET_IS_MODAL_REGISTER_VISIBLE', payload: false })
   }
 
+  const handleLogoutUser = async () => {
+    try {
+      await logoutUser()
+      removeCookie()
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   const menuUser = (
-    <Menu>
-      <Menu.Item key="1">
-        <Button htmlType="button" type="primary" onClick={showModalRegister}>Register</Button>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Button htmlType="button" onClick={showModalLogin}>Login</Button>
-      </Menu.Item>
-    </Menu>
+    isLogin() ? (
+      <Menu>
+        <Menu.Item key="2">
+          <Button htmlType="button" type="primary" onClick={handleLogoutUser}>Logout</Button>
+        </Menu.Item>
+      </Menu>
+    ) : (
+      <Menu>
+        <Menu.Item key="1">
+          <Button htmlType="button" type="primary" onClick={() => Router.push('/news')}>News</Button>
+        </Menu.Item>
+        <Menu.Item key="2">
+          <Button htmlType="button" type="primary" onClick={showModalRegister}>Register</Button>
+        </Menu.Item>
+        <Menu.Item key="3">
+          <Button htmlType="button" onClick={showModalLogin}>Login</Button>
+        </Menu.Item>
+      </Menu>
+    )
   )
 
   return (
